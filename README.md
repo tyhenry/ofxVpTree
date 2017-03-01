@@ -21,6 +21,7 @@ for(size_t i = 0; i < 1024 * 10; i++) {
 
 vp_tree.create(items);
 
+/* vp_tree.search(search_point, num_neighbors) */
 std::vector<ofxVpTree::item> results = vp_tree.search(items[0], 16);
 
 /*
