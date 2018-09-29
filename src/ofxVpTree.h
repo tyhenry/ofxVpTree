@@ -23,13 +23,13 @@ auto vec_euclidean_distance(T x, T y) -> decltype((x - y).norm()) {
   return (x - y).norm();
 }
 
-item dummy_1(1);
-item dummy_2(1);
+static item dummy_1 = item(1);
+static item dummy_2 = item(1);
 
 // there has to be a better way!!
 typedef decltype(vec_euclidean_distance(dummy_1, dummy_2)) item_scalar;
 
-template <typename T = item, typename T_scalar = item_scalar,
+template <typename T = item, typename T_scalar = item_scalar, 
           T_scalar (*distance)(const T&, const T&) =
               vec_euclidean_distance<item>>
 class VpTree {
